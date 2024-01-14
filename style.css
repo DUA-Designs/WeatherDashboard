@@ -1,0 +1,588 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,500;0,600;1,600&family=Catamaran:wght@500&family=Nunito:wght@300&family=Open+Sans:ital,wght@1,500&family=Roboto+Slab&family=Roboto:ital,wght@1,500&display=swap');
+*{
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', sans-serif;
+   
+    transition: all 0.5s ease;
+
+}
+#container{
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+   
+   
+    
+    
+    
+ 
+}
+#dashboard{
+ 
+   background-color: burlywood;
+   width: 10%;
+   padding: 1.5rem;
+  
+   text-wrap:nowrap !important ;
+}
+#dashboard:hover{
+   
+  
+
+   
+   width: 20%;
+   
+
+   
+}
+#componentLoader{
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   margin: auto;
+   display: none;
+
+}
+ 
+ 
+/* HTML: <div class="loader"></div> */
+.componentLoader {
+   width: 50px;
+   aspect-ratio: 1;
+   display: grid;
+   border: 4px solid #0000;
+   border-radius: 50%;
+   border-color: #ccc #0000;
+   animation: l16 1s infinite linear;
+ }
+ .componentLoader::before,
+ .componentLoader::after {    
+   content: "";
+   grid-area: 1/1;
+   margin: 2px;
+   border: inherit;
+   border-radius: 50%;
+   
+ }
+ .componentLoader::before {
+   border-color:  burlywood #0000;
+   animation: inherit; 
+   animation-duration: .5s;
+   animation-direction: reverse;
+ }
+ .componentLoader::after {
+   margin: 8px;
+ }
+ @keyframes l16 { 
+   100%{transform: rotate(1turn)}
+ }
+ 
+ 
+#welcome{
+   text-align: center;
+}
+#current{
+   display: none;
+}
+#forecast{
+   display: none;
+}
+#history{
+   display: none;
+}
+#future{
+   display: none;
+}
+#marine{
+   display: none;
+}
+#astronamy{
+   display: none;
+}
+#timezone{
+   display: none;
+}
+#sports{
+   display: none;
+}
+#dashIcon {
+   overflow: hidden;
+    
+   text-align: center;
+ 
+    
+   
+    
+}
+
+#dashIcon i{
+   font-size: 2rem;
+}
+#dashboard:hover #dashIcon span::after{
+   content: " Weather";
+   font-size: 2rem;
+  
+}
+#dashItems{
+   text-align: center;
+}
+#dashboard:hover #dashItems{
+   text-align: start;
+}
+ 
+#dashItems>div:hover{
+   background-color: rgb(63, 62, 62);
+   
+   cursor: pointer;
+ 
+   
+}
+ 
+#dashboard:hover #dashItems div:nth-child(1)  span::after{
+   content: " Current";
+ 
+
+
+}
+#dashboard:hover #dashItems div:nth-child(2)  span::after{
+   content: " Forecast";
+
+
+}
+#dashboard:hover #dashItems div:nth-child(3)  span::after{
+   content: " History";
+
+
+}
+#dashboard:hover #dashItems div:nth-child(4)  span::after{
+   content: " Future";
+
+
+}
+#dashboard:hover #dashItems div:nth-child(5)  span::after{
+   content: " Marine";
+
+
+}
+#dashboard:hover #dashItems div:nth-child(6)  span::after{
+   content: " Astronamy";
+
+
+}
+
+#dashboard:hover #dashItems div:nth-child(7)  span::after{
+   content: " Time Zone";
+
+
+}
+#dashboard:hover #dashItems div:nth-child(8)  span::after{
+   content: "  Sports";
+
+
+}
+ 
+#box{
+   overflow-y: scroll;
+   flex: auto;
+   position: relative;
+   
+}
+ 
+
+#box::-webkit-scrollbar{
+   width: 6px;
+   background : transparent;
+   
+   cursor: pointer;
+}
+#box::-webkit-scrollbar-track{
+  
+
+}
+#box::-webkit-scrollbar-thumb{
+  
+   background: burlywood;
+   border-radius: 10px;
+
+}
+
+#search{
+  
+    padding: 1vw;
+   
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+#city{
+   font-size: 1rem;
+   padding: 1rem;
+   border-radius:5px;
+   background: transparent;
+   width: 30%;
+ 
+       
+ 
+}
+#weatherAPI{
+ 
+   border-radius: 5px;
+   cursor: pointer;
+   width: 30%;
+   border: none;
+   padding: 1.1rem;
+   
+}
+#weatherAPI:hover{
+   background-color: burlywood;
+}
+
+
+ #deg sub{
+    font-weight: 100;
+    font-size: 10px;
+ }
+ #locationHead{
+   font-size: 2rem;
+   text-align: center;
+   padding: 1rem;
+ }
+ #deg sup{
+    font-size: 10px;
+ }
+ /* HTML: <div class="loader"></div> */
+ #loader{
+   display: none;
+   position: absolute;
+  left: 0;
+  right: 0;
+   top:0;
+   bottom: 0;
+    margin:  auto;
+   
+ }
+.loader {
+   width: 50px;
+   aspect-ratio: 1;
+   display: grid;
+   border: 4px solid #0000;
+   border-radius: 50%;
+   border-right-color: burlywood;
+   animation: l15 1s infinite linear;
+ }
+ .loader::before,
+ .loader::after {    
+   content: "";
+   grid-area: 1/1;
+   margin: 2px;
+   border: inherit;
+   border-radius: 50%;
+   animation: l15 2s infinite;
+ }
+ .loader::after {
+   margin: 8px;
+   animation-duration: 3s;
+ }
+ @keyframes l15{ 
+   100%{transform: rotate(1turn)}
+ }
+ /* HTML: <div class="loader"></div> */
+
+ #flex-box{
+
+  
+    
+    transform-origin: top;
+    transform: scaleY(0);
+    padding: 2rem;
+  
+   
+    
+ 
+  }
+ #flex-box.CollapseMe{
+    transform: scaleY(1);
+    transition:  0.5s ease;
+}
+ .flex-box-childs{
+    padding: 1rem;
+    width: 50%;
+  
+ }
+ #two-boxes{
+    display: flex;
+   }
+ #two-boxes div{
+    width: 50%;
+   }
+ #box1{
+    display: grid;
+    justify-content: end;
+    font-size: 2rem;
+ 
+ }
+  
+ 
+ #box2 h1{
+    font-size: 3rem;
+ }
+ .flex-box-childs:nth-child(2) p{
+    border-bottom: 1px solid rgb(202, 195, 195);
+    
+    display: flex;justify-content: space-between;
+    
+ }
+ #more{
+    text-align: end;
+    cursor: pointer;
+    font-weight: 600;
+    
+
+ }
+ #moreDetails{
+   visibility: hidden;
+  
+ 
+  
+   transform: scaleY(0);
+   
+   transform-origin: top;
+   
+ 
+ }
+ #moreDetails.makeVisible{
+   visibility: visible;
+ }
+ #moreDetails.CollapseMe{
+  
+  
+   transform: scaleY(1);
+   transition: 0.5s ease;
+  
+ 
+ }
+ #windDegreeSup{
+   font-size: 8px;
+}
+#req{
+   display: none;
+}
+
+.myReqDetails{
+   display: flex;
+   justify-content: space-between;
+   padding: 1rem;
+   border-bottom: 1px solid black;
+
+
+}
+#dashToggle{
+   display: none;
+}
+#close{
+   display: none;
+}
+
+#container-box{
+ display: flex;
+
+}
+
+ @media  screen and (max-width:760px) {
+
+   
+     
+    #search{
+      font-size: 1.2rem;
+   
+      flex-wrap: wrap;
+      justify-content: space-around;
+      
+    }
+    #credit{
+      width: 60px;
+      height: 25px;
+    }
+    #city{
+      width: 60%;
+      margin: 0.5rem 0;
+    }
+   
+    #weatherAPI{
+      width: 100%;
+       
+    }
+    #dashboard:hover #dashItems{
+      text-align: center;
+   }
+   
+   #dashboard #dashItems div:nth-child(1)  span::after{
+      content: " Current";
+    
+   
+   
+   }
+   #dashboard #dashItems div:nth-child(2)  span::after{
+      content: " Forecast";
+   
+   
+   }
+   #dashboard #dashItems div:nth-child(3)  span::after{
+      content: " History";
+   
+   
+   }
+   #dashboard #dashItems div:nth-child(4)  span::after{
+      content: " Future";
+   
+   
+   }
+   #dashboard #dashItems div:nth-child(5)  span::after{
+      content: " Marine";
+   
+   
+   }
+   #dashboard #dashItems div:nth-child(6)  span::after{
+      content: " Astronamy";
+   
+   
+   }
+   
+   #dashboard #dashItems div:nth-child(7)  span::after{
+      content: " Time Zone";
+   
+   
+   }
+   #dashboard #dashItems div:nth-child(8)  span::after{
+      content: "  Sports";
+   
+   
+   }
+   #dashboard  #dashIcon span::after{
+      content: " Weather";
+      font-size: 4rem;
+     
+   }
+   #dashIcon i{
+      font-size: 4rem;
+   }
+   #dashboard:hover #dashIcon span::after{
+      content: " Weather";
+      font-size: 4rem;
+     
+   }
+    
+   
+     
+#container-box{
+flex-wrap: wrap;
+ 
+}
+    
+    #flex-box{
+      padding: 0.3rem;
+      flex-wrap: wrap;
+    
+   
+    }
+    .flex-box-childs{
+      padding: 0.5rem;
+      width: 100%;
+      margin: 1rem 0;
+     
+    }
+    
+    #box1 img{
+        width: 40px;
+        height: 40px;
+     }
+     #box{
+      overflow-x: hidden;
+      padding: 2rem;
+
+  }
+  #box *{
+   font-size: 2rem;
+  }
+  #deg sub{
+ 
+   font-size: 4px;
+}
+#deg sup{
+   font-size: 6px;
+}
+#o{
+   font-size: 6px;
+}
+#windDegreeSup{
+   font-size: 5px;
+}
+
+#dashboard{
+   position: absolute;
+   overflow-y: scroll;
+   z-index: 99;
+ 
+   padding: 0;
+ width: 0;
+ height: 100vh;
+    
+}
+#dashboard *{
+   font-size: 2rem;
+}
+#dashboard:hover{
+   width: 0;
+}
+ 
+#dashboard.expandMe{
+   width: 100%;
+
+
+}
+#dashIcon{
+   font-size: 3rem;
+}
+#dashToggle{
+   display:inline;
+   position: absolute;
+   cursor: pointer;
+   z-index: 99;
+   padding: 1rem;
+   background-color: burlywood;
+  
+    
+}
+#dashToggle i{
+   font-size: 3rem;
+   
+}
+#close{
+   font-size: 4rem;
+}
+#close.expandMe{
+    
+  
+   display: block;
+   cursor: pointer;
+   margin: 1rem;
+
+}
+    
+ }
+
+
+ /* Bootstrap responsive css for repeated use*/
+
+
+ 
+ 
+ 
