@@ -4,6 +4,7 @@ const components=["welcome","current","forecast","history","future","marine","as
     await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),500)));
     document.getElementById("dashboard").classList.remove("expandMe");
     document.getElementById("close").classList.remove("expandMe");
+    
     let selected=null;
     for(let i in components){
         if(state===components[i]){
@@ -46,7 +47,7 @@ const components=["welcome","current","forecast","history","future","marine","as
 
           document.getElementById("close").addEventListener("click",()=>{
             document.getElementById("dashboard").classList.remove("expandMe");
-            document.getElementById("close").classList.remove("expandMe");
+           
 
           });
 /* End of Dashboard */
@@ -101,10 +102,14 @@ async function dataFromAPI(){
     flexBox.classList.remove("CollapseMe");
     moreDetails.classList.remove("makeVisible");
     await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),1000)));
+    loader.style.height= `${screen.availHeight}px`;
+    document.getElementById("comeHere").scrollIntoView({behavior:"smooth"});
     loader.style.display="grid";
+  
+
 
    await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),3000)));
-   
+ 
       const data={
         "location": {
             "name": "Pune",

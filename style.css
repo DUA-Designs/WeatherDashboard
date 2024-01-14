@@ -1,12 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,500;0,600;1,600&family=Catamaran:wght@500&family=Nunito:wght@300&family=Open+Sans:ital,wght@1,500&family=Roboto+Slab&family=Roboto:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&family=Barlow:ital,wght@0,500;0,600;1,600&family=Catamaran:wght@500&family=Nunito:wght@300&family=Open+Sans:ital,wght@1,500&family=Roboto+Slab&family=Roboto:ital,wght@1,500&display=swap');
 *{
     font-size: 14px;
     margin: 0;
     padding: 0;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
    
     transition: all 0.5s ease;
 
+}
+html{
+   scroll-behavior: smooth;
 }
 #container{
     height: 100vh;
@@ -184,6 +187,7 @@
 
 
 }
+
  
 #box{
    overflow-y: scroll;
@@ -206,6 +210,22 @@
 #box::-webkit-scrollbar-thumb{
   
    background: burlywood;
+   border-radius: 10px;
+
+}
+#dashboard::-webkit-scrollbar{
+   width: 8px;
+   background : transparent;
+   
+   cursor: pointer;
+}
+#dashboard::-webkit-scrollbar-track{
+ 
+
+}
+#dashboard::-webkit-scrollbar-thumb{
+  
+   background: rgb(99, 98, 98);
    border-radius: 10px;
 
 }
@@ -261,12 +281,14 @@
  /* HTML: <div class="loader"></div> */
  #loader{
    display: none;
-   position: absolute;
-  left: 0;
-  right: 0;
-   top:0;
-   bottom: 0;
-    margin:  auto;
+   position: relative;
+ 
+
+ 
+  
+    align-items: center;
+    justify-content: center;
+    
    
  }
 .loader {
@@ -395,6 +417,9 @@
  display: flex;
 
 }
+#condition{
+   font-size: 1.5rem;
+}
 
  @media  screen and (max-width:760px) {
 
@@ -405,14 +430,15 @@
    
       flex-wrap: wrap;
       justify-content: space-around;
+      margin: 0.5rem 0;
       
     }
     #credit{
-      width: 60px;
-      height: 25px;
+    
+      margin: 0.5rem 0;
     }
     #city{
-      width: 60%;
+      width: 100%;
       margin: 0.5rem 0;
     }
    
@@ -509,22 +535,9 @@ flex-wrap: wrap;
       padding: 2rem;
 
   }
-  #box *{
-   font-size: 2rem;
-  }
-  #deg sub{
+   
  
-   font-size: 4px;
-}
-#deg sup{
-   font-size: 6px;
-}
-#o{
-   font-size: 6px;
-}
-#windDegreeSup{
-   font-size: 5px;
-}
+ 
 
 #dashboard{
    position: absolute;
@@ -557,6 +570,7 @@ flex-wrap: wrap;
    cursor: pointer;
    z-index: 99;
    padding: 1rem;
+   border-radius: 5px;
    background-color: burlywood;
   
     
@@ -566,7 +580,7 @@ flex-wrap: wrap;
    
 }
 #close{
-   font-size: 4rem;
+   font-size: 3.8rem;
 }
 #close.expandMe{
     
@@ -575,6 +589,35 @@ flex-wrap: wrap;
    cursor: pointer;
    margin: 1rem;
 
+}
+#air *{
+   font-size: 1.2rem;
+}
+#locationHead{
+   font-size: 3rem;
+}
+.flex-box-childs *{
+   font-size: 2rem;
+}
+#deg{
+   font-size: 2rem;
+   text-wrap:nowrap;
+}
+#deg  sup{
+   font-size:1.2rem;
+}
+#deg  sub{
+   font-size:1.2rem;
+}
+#windDegreeSup{
+   font-size: 1.2rem;
+}
+.myReqDetails *{
+   font-size: 2rem;
+}
+#condition{
+   font-size: 2rem;
+   font-weight: 600;
 }
     
  }

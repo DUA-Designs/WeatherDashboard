@@ -43,13 +43,13 @@
             <div id="search">
                 <a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' id="credit" alt="Weather data by WeatherAPI.com" border="0"></a>  <input type="text" id="city" placeholder="Enter your city..."> <button id="weatherAPI">Check Weather</button>
             </div>
-            <div id="" class="p-4 border rounded   mx-4"> <span> Need air quality? Select the option before typing the city name.</span> <label>Get Air Quality <select  id="airCheck"> <option value="yes">Yes</option><option value="no" selected>No</option></select></label></div>
-            <div class="loader" id="loader"></div>
+            <div id="air" class="p-4 border rounded   mx-4"> <span> Need air quality? Select the option before typing the city name.</span> <label>Get Air Quality <select  id="airCheck"> <option value="yes">Yes</option><option value="no" selected>No</option></select></label></div>
+            <div id="loader"><div class="loader" ></div></div>
             <div id="flex-box"> 
               <h1 id="locationHead"></h1>
               <div  id="container-box">
-                  <div class="flex-box-childs">
-                    <h4>Current Weather</h4>
+                  <div class="flex-box-childs" id="comeHere">
+                    <h4 >Current Weather</h4>
                     <div id="time"></div>
                     <div id="two-boxes"><div id="box1"><img   id="weatherIcon"></div><div id="box2"><h1 id="temp"></h1><p id="realfeel"></p></div></div>
                     <div id="weather"></div>
@@ -74,7 +74,7 @@
               </div>
              
               <div class="row border rounded  ">
-                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 p-2 fs-4 border-end  d-grid align-items-center"><h4 class="text-center">Air Quality</h4></div>
+                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 p-2 fs-4 border-end  d-grid align-items-center"><h4 class="text-center" style="font-size: 1.5rem;">Air Quality</h4></div>
                  <div id="airQualityDetails" class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                     <div class="row  " id="req">
                      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 p-3  "><div class="myReqDetails"><span>co</span> <span id="coValue"></span></div></div>
