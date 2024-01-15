@@ -420,6 +420,10 @@ html{
 #condition{
    font-size: 1.5rem;
 }
+#weatherIcon{
+   height: 100%;
+   width: auto;
+}
 
  @media  screen and (max-width:760px) {
 
@@ -526,10 +530,7 @@ flex-wrap: wrap;
      
     }
     
-    #box1 img{
-        width: 40px;
-        height: 40px;
-     }
+    
      #box{
       overflow-x: hidden;
       padding: 2rem;
@@ -619,6 +620,7 @@ flex-wrap: wrap;
    font-size: 2rem;
    font-weight: 600;
 }
+ 
     
  }
 
