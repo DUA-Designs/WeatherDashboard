@@ -420,6 +420,9 @@ html{
 #condition{
    font-size: 1.5rem;
 }
+#condition i{
+   font-size: 1.5rem;
+}
 #weatherIcon{
    height: 100%;
    width: auto;
@@ -619,6 +622,9 @@ flex-wrap: wrap;
 #condition{
    font-size: 2rem;
    font-weight: 600;
+}
+#condition i{
+   font-size: 2rem;
 }
  
     
