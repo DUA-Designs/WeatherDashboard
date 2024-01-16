@@ -230,7 +230,7 @@ html{
 
 }
 
-#search{
+.search{
   
     padding: 1vw;
    
@@ -242,7 +242,7 @@ html{
     align-items: center;
 }
  
-#city{
+.cityInput{
    font-size: 1rem;
    padding: 1rem;
    border-radius:5px;
@@ -252,7 +252,7 @@ html{
        
  
 }
-#weatherAPI{
+.weatherAPI{
  
    border-radius: 5px;
    cursor: pointer;
@@ -261,7 +261,7 @@ html{
    padding: 1.1rem;
    
 }
-#weatherAPI:hover{
+.weatherAPI:hover{
    background-color: burlywood;
 }
 
@@ -432,7 +432,7 @@ html{
 
    
      
-    #search{
+    .search{
       font-size: 1.2rem;
    
       flex-wrap: wrap;
@@ -440,16 +440,16 @@ html{
       margin: 0.5rem 0;
       
     }
-    #credit{
+    .credit{
     
       margin: 0.5rem 0;
     }
-    #city{
+    .cityInput{
       width: 100%;
       margin: 0.5rem 0;
     }
    
-    #weatherAPI{
+    .weatherAPI{
       width: 100%;
        
     }
@@ -632,8 +632,35 @@ flex-wrap: wrap;
 
 
  /* Bootstrap responsive css for repeated use*/
-
+ .container {
+   width: 100%;
+   padding-right: 15px;
+   padding-left: 15px;
+   margin-right: auto;
+   margin-left: auto;
+} 
+@media (min-width: 576px) {
+   .container {
+       width: 540px;
+   }
+}
+@media (min-width: 768px) {
+   .container {
+       width: 720px;
+   }
+}
+@media (min-width: 992px) {
+   .container {
+       width: 960px;
+   }
+}
+@media (min-width: 1200px) {
+   .container {
+       width: 1140px;
+   }
+}
 
  
  
+ /*Bootstrap ends here */
  
