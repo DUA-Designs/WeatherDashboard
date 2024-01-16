@@ -1,3 +1,5 @@
+
+
 /* From here the script is for Dashboard */ 
 const components=["welcome","current","forecast","history","future","marine","astronamy","timezone","sports"];
  async function render(state){
@@ -51,6 +53,7 @@ const components=["welcome","current","forecast","history","future","marine","as
 
           });
 /* End of Dashboard */
+ 
 
 /*From here the script is for Current Weather */
 const locationHead=document.getElementById("locationHead");
@@ -98,17 +101,17 @@ const timer=setInterval(()=>{
 
 },1000);
 
-async function dataFromAPI(){
+async function fetchCurrentData(){
     flexBox.classList.remove("CollapseMe");
     moreDetails.classList.remove("makeVisible");
     await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),1000)));
-    loader.style.height= `${screen.availHeight}px`;
+    loader.style.height= `${window.innerHeight-document.getElementById("searchForCurrent").offsetHeight}px`;
     document.getElementById("comeHere").scrollIntoView({behavior:"smooth"});
     loader.style.display="grid";
   
 
 
-   await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),3000)));
+   await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),2000)));
  
       const data={
         "location": {
@@ -203,7 +206,7 @@ async function dataFromAPI(){
         document.getElementById("req").style.display="none";
        document.getElementById("notReq").style.display="block";
        }
-
+       await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),1000)));
        loader.style.display="none";
 
       
@@ -220,7 +223,7 @@ async function dataFromAPI(){
 city.addEventListener("keypress",(event)=>{
     event.key==="Enter"?API.click():"";
 });
-API.addEventListener("click",dataFromAPI);
+API.addEventListener("click",fetchCurrentData);
 
 
 more.addEventListener("click",()=>{
