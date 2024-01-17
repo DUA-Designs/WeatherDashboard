@@ -27,10 +27,14 @@ const timeDetails=document.getElementById('timeDetails');
  
 
  async function fetchTimezoneData(){
+    document.getElementById("questionForTimezone").style.display="none";
+    timeDetails.style.display="none";
     await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),1000)));
-    loaderForTimezone.style.height= `${window.innerHeight-document.getElementById("searchForTimezone").offsetHeight}px`;
-    document.getElementById("loaderForTimezone").scrollIntoView({behavior:"smooth"});
     loaderForTimezone.style.display="grid";
+    loaderForTimezone.style.height= `${window.innerHeight-document.getElementById("searchForTimezone").offsetHeight}px`;
+     
+
+   
   
 
 
