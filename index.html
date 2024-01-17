@@ -17,9 +17,9 @@
 <body>
     <div id="container">
         <span id="dashToggle" ><i class="fa-solid fa-bars"></i></span>
-        <div id="dashboard" class="  text-white  ">
+        <div id="dashboard" class="  text-white  shadow ">
           <i id="close" class="fa-solid fa-xmark"></i>
-        <h1 id="dashIcon"> <i class="fi fi-ss-cloud-code"></i> <span></span> </h1>
+        <h1 id="dashIcon" onclick="render('welcome')"> <i class="fi fi-ss-cloud-code"></i> <span></span> </h1>
         <div class="container ">
           <div class="row p-3  " id="dashItems">
            
@@ -38,45 +38,120 @@
         </div>
        
         <div id="box" class="p-lg-3 p-md-2 p-sm-1 p-xs-1">
+
           <div class="componentLoader" id="componentLoader"></div>
-          <div id="welcome"><h1>Welcome to Weather App.</h1></div>
+            <!-- This is welcome component-->
+          <div id="welcome" class="container-fluid">
+            <h1 class="shadow py-4 ">Welcome to Weather App <i class="fa-solid fa-feather-pointed fs-2"></i></h1>
+            <div class="row   p-2  ">
+
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  p-2  ">
+                <div class="col-12 my-2  shadow p-2 rounded d-flex flex-wrap  ">
+ 
+                <p class="col-12 my-2 ">Weather App provides the below Weather data </p>
+                <p class="col-12 my-2"><i class="fa-solid fa-angle-down"></i></p>
+              
+                <ul  class="col-lg-6 col-md-6 col-sm-12 col-xs-12    text-start"  >
+                <h4>Main Categories</h4>
+                  <li class="p-2 m-1" >Current</li>
+                  <li class="p-2 m-1" >Forecast</li>
+                  <li class="p-2 m-1" >Historical</li> 
+                  <li class="p-2 m-1" >Future</li>
+                  <li class="p-2 m-1" >Marine</li>
+                  <li class="p-2 m-1" >Astronamy</li>
+                  <li class="p-2 m-1" >Timezone</li>
+                  <li class="p-2 m-1" >Sports</li>
+                </ul>
+              
+
+                 <ul class=" col-lg-6 col-md-6 col-sm-12 col-xs-12  text-start">
+                  <h4>Additional data</h4>
+                  <li class="p-2 m-1" >Weather Alerts</li>
+                  <li class="p-2 m-1" >Air Quality Data</li>
+                
+                
+                </ul>
+                 
+                </div>
+              
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  p-2">
+                <div class="col-12 my-2 p-2 shadow rounded">
+                <p class="col-12">The details of the selected location will be shown so an input is required. </p>
+                <p class="col-12 my-2"><i class="fa-solid fa-angle-down"></i></p>
+                <ul class="col-12 text-start">
+                  <h4 class="">Your query can be any of the following</h4>
+                  <li  class="p-2 m-1">Latitude and Longitude (e.g.:  48.8567,2.3508)</li>
+                  <li  class="p-2 m-1">City name (e.g.: Pune) </li>
+                  <li  class="p-2 m-1">UK postcode (e.g.: SW1) - only UK postcode are supported</li>
+                  <li  class="p-2 m-1">US zip (e.g.: 10001) - only US zip are supported</li>
+                  <li  class="p-2 m-1">Metar code (e.g.: metar:VAPO PNQ)</li>
+                  <li  class="p-2 m-1">iata:3 digit airport code (e.g:iata:PNQ)</li>
+                  <li  class="p-2 m-1"> auto:ip IP lookup (e.g:auto:ip)</li>
+                  <li  class="p-2 m-1">IP address (IPv4 and IPv6 supported) (e.g:100.0.0.1)</li>
+                  
+
+                </ul>
+                </div>
+              </div>
+            </div>
+            
+          
+          </div>
+
+  <!-- This is current component-->
+          
           <div id="current"> 
+
             <div class="search" id="searchForCurrent">
                 <a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' class="credit" alt="Weather data by WeatherAPI.com" ></a>  <input type="text" id="city" class="cityInput" placeholder="Enter your city..."> <button id="weatherAPI" class="weatherAPI">Check Weather</button>
+
             </div>
+
             <div id="air" class="p-4 border rounded   mx-4"> <span> Need air quality? Select the option before typing the city name.</span> <label>Get Air Quality <select  id="airCheck"> <option value="yes">Yes</option><option value="no" selected>No</option></select></label></div>
-            <div id="loader"><div class="loader" ></div></div>
-            <div id="flex-box"> 
-              <h1 id="locationHead"></h1>
-              <div  id="container-box">
-                  <div class="flex-box-childs" id="comeHere">
-                    <h4 >Current Weather</h4>
-                    <div id="time"></div>
-                    <div id="two-boxes"><div id="box1"><img   id="weatherIcon"  ></div><div id="box2"><h1 id="temp"></h1><p id="realfeel"></p></div></div>
-                    <div id="weather"></div>
+            <div id="questionForCurrent" class="container  ">
+              <div class="row p-5 p-xs-1 ">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mx-auto    ">  <img src="./images/noun-confused-4196244.png" alt="confused_image" class="img-fluid"></div>
+                <div class="col-12  "><p class="text-center">Enter the city above and click on the adjacent button to see the magic...</p></div>
+              </div>
+            </div>
+            <div id="loader" class="  my-3"><div class="loader" ></div></div>
+            <div id="flex-box" class="  my-3 container"> 
+          
+              <div  id="container-box" class="row">
+                <h1 id="locationHead" class="py-4 shadow rounded "></h1>
+                  <div class="flex-box-childs   my-2 p-1  col-lg-6 col-md-5 col-sm-12 col-xs-12" id="comeHere">
+                   <div class="col-12 shadow p-5 rounded"  >
+                    <h4  class="p-1">Current Weather</h4>
+                    <div id="time" class="p-1"></div>
+                    <div id="two-boxes" class="p-1 my-1"><div id="box1"><img   id="weatherIcon"  ></div><div id="box2"><h1 id="temp"></h1><p id="realfeel"></p></div></div>
+                    <div id="weather" class="p-1 my-1"></div>
+                   </div>
                
                   </div>
-                  <div class="flex-box-childs">
-                      <p><span>Humidity</span>  <span id="humidityValue"></span></p>
-                      <p><span>Uv</span>  <span id="uvValue"></span></p>
-                      <p><span>Wind</span>  <span id="windValue"></span></p>
-                      <p><span>Wind Gusts</span>  <span id="gustValue"></span></p>
-                    <div id="moreDetails">
-                      <p><span>Wind Degree</span>  <span><span id="windDegreeValue"></span> <sup id="windDegreeSup">o</sup></span></p>
-                      <p><span>Cloud</span>  <span id="cloudValue"></span></p>
-                      <p><span>Pressure</span>  <span id="pressureValue"></span></p>
-                      <p><span>Precipitation</span>  <span id="precipitationValue"></span></p>
-                  
-                    </div>
-                    <div id="more">More Details <i class="fa-solid fa-up-down"></i></i></div>
+                  <div class="flex-box-childs   my-2 p-1 col-lg-6 col-md-5 col-sm-12 col-xs-12">
+                   <div class="col-12 shadow p-3 rounded"  >
+                    <p><span>Humidity</span>  <span id="humidityValue"></span></p>
+                    <p><span>Uv</span>  <span id="uvValue"></span></p>
+                    <p><span>Wind</span>  <span id="windValue"></span></p>
+                    <p><span>Wind Gusts</span>  <span id="gustValue"></span></p>
+                  <div id="moreDetails">
+                    <p><span>Wind Degree</span>  <span><span id="windDegreeValue"></span> <sup id="windDegreeSup">o</sup></span></p>
+                    <p><span>Cloud</span>  <span id="cloudValue"></span></p>
+                    <p><span>Pressure</span>  <span id="pressureValue"></span></p>
+                    <p><span>Precipitation</span>  <span id="precipitationValue"></span></p>
+                
+                  </div>
+                  <button id="more"  >More Details <i class="fa-solid fa-up-down"></i></i></button>
+                   </div>
 
                 
                  </div>
               </div>
              
-              <div class="row border rounded  ">
+              <div class="row shadow rounded my-3 p-3 ">
                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 p-2 fs-4 border-end  d-grid align-items-center"><h4 class="text-center" style="font-size: 1.5rem;">Air Quality</h4></div>
-                 <div id="airQualityDetails" class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                 <div id="airQualityDetails" class="col-lg-10 col-md-10 col-sm-10 col-xs-12 ">
                     <div class="row  " id="req">
                       <div id="loader"><div class="loader" ></div></div>
                      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 p-3  "><div class="myReqDetails"><span>co</span> <span id="coValue"></span></div></div>
@@ -87,7 +162,7 @@
                      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 p-3 "><div class="myReqDetails"><span>us-epa-index</span> <span id="us-epa-indexValue"></span></div></div>
                      <div class="col-12 p-3" id="condition"></div>
                     </div>
-                    <div id="notReq" class="col-6 mx-auto p-2">Not Requested</div>
+                    <div id="notReq" class="col-12 text-center ">Not Requested</div>
                  </div>  
                 
               </div>
@@ -100,31 +175,40 @@
            <div id="future"><h1>Prerna Sahu will join here</h1></div>
            <div id="marine"><h1>Muskan Khan will join here</h1></div>
            <div id="astronamy"><h1>MOHAMMAD NASERA THABASSUM will join here</h1></div>
-           <div id="timezone">
-            <div class="container  ">
-              <div class="row">
-                <div class="search col-12" id="searchForTimezone">
-                <a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' class="credit" alt="Weather data by WeatherAPI.com"  ></a>  <input type="text" id="cityForTimezone" class="cityInput" placeholder="Enter your city..."> <button id="timezoneAPI" class="weatherAPI">Check Timezone</button>
-                  </div>
-                  <div id="loaderForTimezone"><div class="loader" ></div></div>
+           <div id="timezone" class="container">
+             <div class="row">
+                <div class="search  " id="searchForTimezone">
+                   <a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' class="credit" alt="Weather data by WeatherAPI.com"  ></a>  <input type="text" id="cityForTimezone" class="cityInput" placeholder="Enter your city..."> <button id="timezoneAPI" class="weatherAPI">Check Timezone</button>
+                </div>
+                <div id="questionForTimezone" class="container  ">
+                    <div class="row p-4 ">
+                      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mx-auto    ">  <img src="./images/noun-confused-4196244.png" alt="confused_image" class="img-fluid"></div>
+                      <div class="col-12  "><p class="text-center">Enter the city above and click on the adjacent button to see the magic...</p></div>
+                    </div>
+                </div>
+                <div id="loaderForTimezone"><div class="loader" ></div></div>
                   
                 
               <div class="col-12     p-lg-5 p-md-3 p-sm-1 p-xs-1  " id="timeDetails">
-                <div class="col-lg-11 mx-auto col-md-10 col-sm-12 col-xs-12 " id="timeHead"><div class="col-12  "><span>Timezone  - </span> <span id="TimezoneValue"></span></div></div>
+                <div class=" col-12 p-2" id="timeHead"><div class="col-12 shadow "><span>Timezone  - </span> <span id="TimezoneValue"></span></div></div>
                
-                <div class="col-lg-2  col-md-3 col-sm-4 col-xs-12 mx-auto"><div><span>Name - </span> <span id="NameValue"></span ></div></div>
-                <div class="col-lg-2  col-md-3 col-sm-4 col-xs-12 mx-auto"><div><span>Region - </span> <span id="RegionValue"></span ></div></div>
-                <div class="col-lg-2  col-md-3 col-sm-4 col-xs-12 mx-auto"><div><span>Country - </span> <span id="CountryValue"></span ></div></div>
-                <div class="col-lg-2  col-md-3 col-sm-4 col-xs-12 mx-auto"><div><span>Latitude - </span> <span id="LatitudeValue"></span ></div></div>
-                <div class="col-lg-2  col-md-3 col-sm-4 col-xs-12 mx-auto"><div><span>Longitude - </span> <span id="LongitudeValue"></span ></div></div>
+                <div class="col-lg-2  col-md-3 col-sm-4 col-xs-12 mx-auto p-2"><div class="shadow col-12"><span>Name - </span> <span id="NameValue"></span ></div></div>
+                <div class="col-lg-2  col-md-3 col-sm-4 col-xs-12 mx-auto p-2"><div class="shadow col-12"><span>Region - </span> <span id="RegionValue"></span ></div></div>
+                <div class="col-lg-2  col-md-3 col-sm-4 col-xs-12 mx-auto p-2"><div class="shadow col-12"><span>Country - </span> <span id="CountryValue"></span ></div></div>
+                <div class="col-lg-2  col-md-3 col-sm-4 col-xs-12 mx-auto p-2"><div class="shadow col-12"><span>Latitude - </span> <span id="LatitudeValue"></span ></div></div>
+                <div class="col-lg-2  col-md-3 col-sm-4 col-xs-12 mx-auto p-2"><div class="shadow col-12"><span>Longitude - </span> <span id="LongitudeValue"></span ></div></div>
                 
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mx-auto"><div><span>Local Time - </span> <span id="LocalValue"></span></div></div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mx-auto p-2"><div class="shadow col-12"><span>Local Time - </span> <span id="LocalValue"></span></div></div>
                 
               </div>
             </div>
-            </div>
+             
            </div>
-           <div id="sports"><h1> Nothing here yet</h1></div>
+           <div id="sports" class="container">
+            <div class="search  " id="searchForSports">
+              <a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' class="credit" alt="Weather data by WeatherAPI.com"  ></a>  <input type="text" id="cityForSports" class="cityInput" placeholder="Enter your city..."> <button id="sportsAPI" class="weatherAPI">Check Timezone</button>
+                </div>
+           </div>
         </div>
 
     </div>
