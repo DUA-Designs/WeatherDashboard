@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 *{
     font-size: 14px;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
    
     transition: all 0.3s ease;
 
@@ -15,11 +15,6 @@ html{
     height: 100vh;
     display: flex;
     overflow: hidden;
-   
-   
-    
-    
-    
  
 }
 #dashboard{
@@ -31,15 +26,8 @@ html{
    text-wrap:nowrap !important ;
 }
 #dashboard:hover{
-   
-  
-
-   
    width: 20%;
-   
-
-   
-}
+   }
 #componentLoader{
    position: absolute;
    top: 0;
@@ -49,6 +37,9 @@ html{
    margin: auto;
    display: none;
 
+}
+#dashIcon{
+   cursor: pointer;
 }
  
  
@@ -88,6 +79,10 @@ html{
 #welcome{
    text-align: center;
 }
+#welcome p{
+  opacity: 0.7;
+}
+ 
 #current{
    display: none;
 }
@@ -128,7 +123,6 @@ html{
 #dashboard:hover #dashIcon span::after{
    content: " Weather";
    font-size: 2rem;
-  
 }
 #dashItems{
    text-align: center;
@@ -139,53 +133,33 @@ html{
  
 #dashItems>div:hover{
    background-color: rgb(63, 62, 62);
-   
    cursor: pointer;
- 
-   
 }
  
 #dashboard:hover #dashItems div:nth-child(1)  span::after{
    content: " Current";
- 
-
-
-}
+ }
 #dashboard:hover #dashItems div:nth-child(2)  span::after{
    content: " Forecast";
-
-
 }
 #dashboard:hover #dashItems div:nth-child(3)  span::after{
-   content: " History";
-
-
+   content: " Historical";
 }
 #dashboard:hover #dashItems div:nth-child(4)  span::after{
    content: " Future";
-
-
 }
 #dashboard:hover #dashItems div:nth-child(5)  span::after{
    content: " Marine";
-
-
 }
 #dashboard:hover #dashItems div:nth-child(6)  span::after{
    content: " Astronamy";
-
-
 }
 
 #dashboard:hover #dashItems div:nth-child(7)  span::after{
    content: " Time Zone";
-
-
 }
 #dashboard:hover #dashItems div:nth-child(8)  span::after{
    content: "  Sports";
-
-
 }
 
  
@@ -193,7 +167,6 @@ html{
    overflow-y: scroll;
    flex: auto;
    position: relative;
-   
 }
  
 
@@ -227,13 +200,10 @@ html{
   
    background: rgb(99, 98, 98);
    border-radius: 10px;
-
 }
 
 .search{
-  
     padding: 1vw;
-   
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
@@ -248,10 +218,7 @@ html{
    border-radius:5px;
    background: transparent;
    width: 30%;
- 
-       
- 
-}
+ }
 .weatherAPI{
  
    border-radius: 5px;
@@ -264,33 +231,35 @@ html{
 .weatherAPI:hover{
    background-color: burlywood;
 }
-
+#questionForCurrent{
+  
+   display: grid;
+   align-items: center;
+   height:unset;
+ 
+ 
+   
+}
 
  #deg sub{
     font-weight: 100;
     font-size: 10px;
- }
+}
  #locationHead{
    font-size: 2rem;
    text-align: center;
-   padding: 1rem;
- }
+   
+}
  #deg sup{
     font-size: 10px;
- }
+}
  /* HTML: <div class="loader"></div> */
  #loader{
    display: none;
    position: relative;
- 
-
- 
-  
-    align-items: center;
-    justify-content: center;
-    
-   
- }
+   align-items: center;
+   justify-content: center;
+}
 .loader {
    width: 50px;
    aspect-ratio: 1;
@@ -299,7 +268,7 @@ html{
    border-radius: 50%;
    border-right-color: burlywood;
    animation: l15 1s infinite linear;
- }
+}
  .loader::before,
  .loader::after {    
    content: "";
@@ -308,89 +277,77 @@ html{
    border: inherit;
    border-radius: 50%;
    animation: l15 2s infinite;
- }
+}
  .loader::after {
    margin: 8px;
    animation-duration: 3s;
- }
+}
  @keyframes l15{ 
    100%{transform: rotate(1turn)}
- }
+}
  /* HTML: <div class="loader"></div> */
 
- #flex-box{
-
-  
-    
+#flex-box{
     transform-origin: top;
     transform: scaleY(0);
     padding: 2rem;
-  
-   
-    
- 
   }
- #flex-box.CollapseMe{
+#flex-box.CollapseMe{
     transform: scaleY(1);
     transition:  0.5s ease;
 }
- .flex-box-childs{
-    padding: 1rem;
-    width: 50%;
-  
- }
- #two-boxes{
+ 
+#two-boxes{
     display: flex;
    }
- #two-boxes div{
+#two-boxes div{
     width: 50%;
-   }
- #box1{
+}
+#box1{
     display: grid;
     justify-content: end;
     font-size: 2rem;
  
- }
-  
- 
- #box2 h1{
+}
+#box2 h1{
     font-size: 3rem;
- }
- .flex-box-childs:nth-child(2) p{
+}
+.flex-box-childs{
+   display: flex;
+   flex-wrap: wrap;
+}
+.flex-box-childs:nth-child(3)  div p{
     border-bottom: 1px solid rgb(202, 195, 195);
     
     display: flex;justify-content: space-between;
     
- }
- #more{
+}
+#more{
     text-align: end;
     cursor: pointer;
     font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    padding: 0.5rem;
+  
     
 
- }
- #moreDetails{
+}
+#more:hover{
+   background-color: burlywood;
+}
+#moreDetails{
    visibility: hidden;
-  
- 
-  
    transform: scaleY(0);
-   
    transform-origin: top;
-   
- 
- }
+}
  #moreDetails.makeVisible{
    visibility: visible;
- }
+}
  #moreDetails.CollapseMe{
-  
-  
    transform: scaleY(1);
    transition: 0.5s ease;
-  
- 
- }
+}
  #windDegreeSup{
    font-size: 8px;
 }
@@ -403,8 +360,6 @@ html{
    justify-content: space-between;
    padding: 1rem;
    border-bottom: 1px solid black;
-
-
 }
 #dashToggle{
    display: none;
@@ -415,7 +370,7 @@ html{
 
 #container-box{
  display: flex;
-
+ justify-content: space-between;
 }
 #condition{
    font-size: 1.5rem;
@@ -428,10 +383,9 @@ html{
    width: auto;
 }
 
- @media  screen and (max-width:760px) {
+@media  screen and (max-width:760px) 
+{
 
-   
-     
     .search{
       font-size: 1.2rem;
    
@@ -441,7 +395,6 @@ html{
       
     }
     .credit{
-    
       margin: 0.5rem 0;
     }
     .cityInput{
@@ -460,115 +413,84 @@ html{
    #dashboard #dashItems div:nth-child(1)  span::after{
       content: " Current";
     
-   
-   
    }
    #dashboard #dashItems div:nth-child(2)  span::after{
       content: " Forecast";
-   
-   
    }
    #dashboard #dashItems div:nth-child(3)  span::after{
-      content: " History";
-   
-   
+      content: " Historical";
    }
    #dashboard #dashItems div:nth-child(4)  span::after{
       content: " Future";
-   
-   
    }
    #dashboard #dashItems div:nth-child(5)  span::after{
       content: " Marine";
-   
-   
    }
    #dashboard #dashItems div:nth-child(6)  span::after{
       content: " Astronamy";
-   
-   
    }
    
    #dashboard #dashItems div:nth-child(7)  span::after{
       content: " Time Zone";
-   
-   
    }
    #dashboard #dashItems div:nth-child(8)  span::after{
       content: "  Sports";
-   
-   
    }
    #dashboard  #dashIcon span::after{
       content: " Weather";
-      font-size: 4rem;
-     
+      font-size: 3.5rem;
    }
+   
    #dashIcon i{
-      font-size: 4rem;
+      font-size: 3.5rem;
    }
    #dashboard:hover #dashIcon span::after{
       content: " Weather";
-      font-size: 4rem;
-     
+      font-size: 3.5rem;
    }
     
-   
-     
-#container-box{
-flex-wrap: wrap;
+   #container-box{
+    flex-wrap: wrap;
  
-}
+    }
     
-    #flex-box{
+   #flex-box{
       padding: 0.3rem;
       flex-wrap: wrap;
-    
-   
     }
     .flex-box-childs{
       padding: 0.5rem;
       width: 100%;
       margin: 1rem 0;
-     
-    }
-    
-    
-     #box{
+     }
+    #box{
       overflow-x: hidden;
       padding: 2rem;
-
-  }
-   
- 
- 
-
-#dashboard{
+   }
+   #dashboard{
    position: absolute;
    overflow-y: scroll;
    z-index: 99;
- 
    padding: 0;
- width: 0;
- height: 100vh;
-    
-}
-#dashboard *{
-   font-size: 2rem;
-}
-#dashboard:hover{
    width: 0;
-}
+   height: 100vh;
+    }
+   #dashboard *{
+   font-size: 2rem;
+   }
+   #dashboard:hover{
+   width: 0;
+    }
  
-#dashboard.expandMe{
+   #dashboard.expandMe{
    width: 100%;
 
 
-}
-#dashIcon{
+   }
+   #dashIcon{
    font-size: 3rem;
-}
-#dashToggle{
+   }
+   #dashToggle{
    display:inline;
    position: absolute;
    cursor: pointer;
@@ -578,89 +500,58 @@ flex-wrap: wrap;
    background-color: burlywood;
   
     
-}
-#dashToggle i{
+   }
+   #dashToggle i{
    font-size: 3rem;
    
-}
-#close{
+   }
+   #close{
    font-size: 3.8rem;
-}
-#close.expandMe{
-    
-  
+   }
+   #close.expandMe{
    display: block;
    cursor: pointer;
    margin: 1rem;
 
-}
-#air *{
+   }
+   #air *{
    font-size: 1.2rem;
-}
-#locationHead{
+   }
+   #locationHead{
    font-size: 3rem;
-}
-.flex-box-childs *{
+   }
+   .flex-box-childs *{
    font-size: 2rem;
-}
-#deg{
+   }
+   #deg{
    font-size: 2rem;
    text-wrap:nowrap;
-}
-#deg  sup{
+   }
+   #deg  sup{
    font-size:1.2rem;
-}
-#deg  sub{
+   }
+   #deg  sub{
    font-size:1.2rem;
-}
-#windDegreeSup{
+   }
+   #windDegreeSup{
    font-size: 1.2rem;
-}
-.myReqDetails *{
+   }
+   .myReqDetails *{
    font-size: 2rem;
-}
-#condition{
+   } 
+   #condition{
    font-size: 2rem;
    font-weight: 600;
-}
-#condition i{
+   }
+   #condition i{
    font-size: 2rem;
-}
+   }
+   #more{
+   font-size: 1.8rem;
+   }
  
     
- }
-
-
- /* Bootstrap responsive css for repeated use*/
- .container {
-   width: 100%;
-   padding-right: 15px;
-   padding-left: 15px;
-   margin-right: auto;
-   margin-left: auto;
-} 
-@media (min-width: 576px) {
-   .container {
-       width: 540px;
-   }
-}
-@media (min-width: 768px) {
-   .container {
-       width: 720px;
-   }
-}
-@media (min-width: 992px) {
-   .container {
-       width: 960px;
-   }
-}
-@media (min-width: 1200px) {
-   .container {
-       width: 1140px;
-   }
 }
 
- 
- 
- /*Bootstrap ends here */
- 
+
+  
