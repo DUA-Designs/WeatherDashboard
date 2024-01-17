@@ -1,8 +1,13 @@
 
 
 /* From here the script is for Dashboard */ 
-const components=["welcome","current","forecast","history","future","marine","astronamy","timezone","sports"];
+const components=[ "welcome","current","forecast","history","future","marine","astronamy","timezone","sports"];
  async function render(state){
+
+    
+    for(let i in components){
+       document.getElementById(components[i]).style.display="none";
+        }
     await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),500)));
     document.getElementById("dashboard").classList.remove("expandMe");
     document.getElementById("close").classList.remove("expandMe");
@@ -83,6 +88,7 @@ const pm10Value=document.getElementById("pm10Value");
 const usEpa =document.getElementById("us-epa-indexValue");
 const  loader=document.getElementById("loader");
 const condition=document.getElementById("condition");
+const time=document.getElementById("time");
 const conditionArray=["Good","Moderate","Unhealthy for sensitive group","Unhealthy for all","Very Unhealthy","Hazardous"];
 const smiley=[`<i class="fa-regular fa-face-smile-beam"></i>`,`<i class="fa-regular fa-face-smile"></i>`,`<i class="fa-regular fa-face-frown-open"></i>`,`<i class="fa-regular fa-face-frown"></i>`,`<i class="fa-regular fa-face-sad-tear"></i>`,`<i class="fa-regular fa-face-sad-cry"></i>`];
 
@@ -91,17 +97,12 @@ const smiley=[`<i class="fa-regular fa-face-smile-beam"></i>`,`<i class="fa-regu
 
 
 
-
-const timer=setInterval(()=>{
-     const date=new Date();
-    let hours=date.getHours();
-    let minutes=date.getMinutes();
-
-    document.getElementById("time").innerHTML=`${hours} : ${minutes>9?minutes:"0"+minutes} ${hours>=12?"PM":"AM"}`;
-
-},1000);
+ 
+ 
 
 async function fetchCurrentData(){
+
+    document.getElementById("questionForCurrent").style.display="none";
     flexBox.classList.remove("CollapseMe");
     moreDetails.classList.remove("makeVisible");
     await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),1000)));
@@ -187,6 +188,9 @@ async function fetchCurrentData(){
        cloudValue.innerHTML=`${data.current.cloud} %`;
        pressureValue.innerHTML=`${data.current.pressure_mb} mb`;
        precipitationValue.innerHTML=`${data.current.precip_mm} mm`;
+       const timeCheck=data.location.localtime.split(" ")[1].split(":")[0];
+
+       time.innerHTML=`${data.location.localtime} ${timeCheck>=12?"PM":"AM"}`;
     if(airCheck.value==="yes"){
                coValue.innerHTML=data.current.air_quality.co;   
                no2Value.innerHTML=data.current.air_quality.no2;
@@ -218,8 +222,9 @@ async function fetchCurrentData(){
         moreDetails.classList.add("makeVisible");
      },1000);
     
-   
+    
 }
+
 city.addEventListener("keypress",(event)=>{
     event.key==="Enter"?API.click():"";
 });
