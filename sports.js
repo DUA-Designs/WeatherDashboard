@@ -33,7 +33,7 @@ async function fetchSportsData(){
  
 
  
-   const response= await fetch(`http://api.weatherapi.com/v1/sports.json?key=2f1a5f47063b4d3c96390406240201&q=${cityForSports.value}`);
+   const response= await fetch(`https://api.weatherapi.com/v1/sports.json?key=2f1a5f47063b4d3c96390406240201&q=${cityForSports.value}`);
            const obj= await response.json();
 console.log(obj);
 
