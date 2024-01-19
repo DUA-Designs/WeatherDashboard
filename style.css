@@ -201,6 +201,9 @@ html{
    background: rgb(99, 98, 98);
    border-radius: 10px;
 }
+#errorForCurrent{
+   display: none;
+}
 
 .search{
     padding: 1vw;
