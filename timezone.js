@@ -31,7 +31,7 @@ const timeDetails=document.getElementById('timeDetails');
   
 
 
-   await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),3000)));
+   await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),1000)));
    const response= await fetch(`https://api.weatherapi.com/v1/timezone.json?key=2f1a5f47063b4d3c96390406240201&q=${cityForTimezone.value}`);
    const dataFromAPI=await response.json();
   
