@@ -1,16 +1,6 @@
  
-const data={
-    "location": {
-        "name": "Cairo",
-        "region": "Al Qahirah",
-        "country": "Egypt",
-        "lat": 30.05,
-        "lon": 31.25,
-        "tz_id": "Africa/Cairo",
-        "localtime_epoch": 1705396030,
-        "localtime": "2024-01-16 11:07"
-    }
-};
+ 
+ 
 const NameValue=document.getElementById("NameValue");
 const RegionValue=document.getElementById("RegionValue");
 const CountryValue=document.getElementById("CountryValue");
@@ -27,9 +17,12 @@ const timeDetails=document.getElementById('timeDetails');
  
 
  async function fetchTimezoneData(){
+
+
     document.getElementById("questionForTimezone").style.display="none";
     timeDetails.style.display="none";
-    await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),1000)));
+    document.getElementById('errorForTimezone').style.display="none";
+    await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),500)));
     loaderForTimezone.style.display="grid";
     loaderForTimezone.style.height= `${window.innerHeight-document.getElementById("searchForTimezone").offsetHeight}px`;
      
@@ -39,26 +32,52 @@ const timeDetails=document.getElementById('timeDetails');
 
 
    await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),3000)));
-   /*const response=fetch(`http://api.weatherapi.com/v1/timezone.json?key=2f1a5f47063b4d3c96390406240201&q=${cityForTimezone.value}`);
-    
-     response.then((res)=>res.json()).then((data)=>{
-        console.log(data);*/
-        NameValue.innerHTML=data["location"]["name"];
- RegionValue.innerHTML=data["location"]["region"];
- CountryValue.innerHTML=data["location"]["country"]
- LatitudeValue.innerHTML=data["location"]["lat"];
- LongitudeValue.innerHTML=data["location"]["lon"];
- TimezoneValue.innerHTML=data["location"]["tz_id"];
- LocalValue.innerHTML=data["location"]["localtime"];
-    
-    /*});*/
+   const response= await fetch(`http://api.weatherapi.com/v1/timezone.json?key=2f1a5f47063b4d3c96390406240201&q=${cityForTimezone.value}`);
+   const dataFromAPI=await response.json();
+  
+ 
+
+
+    if(dataFromAPI.hasOwnProperty("location")){
+        NameValue.innerHTML=dataFromAPI["location"]["name"];
+        RegionValue.innerHTML=dataFromAPI["location"]["region"];
+        CountryValue.innerHTML=dataFromAPI["location"]["country"]
+        LatitudeValue.innerHTML=dataFromAPI["location"]["lat"];
+        LongitudeValue.innerHTML=dataFromAPI["location"]["lon"];
+        TimezoneValue.innerHTML=dataFromAPI["location"]["tz_id"];
+        LocalValue.innerHTML=dataFromAPI["location"]["localtime"];
         await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),1000)));
 
         loaderForTimezone.style.display="none";
         timeDetails.style.display="flex";
+       }
+  
+   
+      else{
+         
+    
+        if(dataFromAPI.error.code===1003){
+            document.getElementById("errorForTimezone").innerHTML=`<h3 class="p-2">Kindly enter relevant details...</h3>`;
+           }
+           else{
+            document.getElementById("errorForTimezone").innerHTML=`<h3 class="p-2">${dataFromAPI.error.message}</h3>`;
+           }
+          
+      
+            
+            
+             await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),500)));
+             loaderForTimezone.style.display="none";
+             timeDetails.style.display="none";
+             document.getElementById("errorForTimezone").style.display="initial";
+      }
+        
+ 
+    
 
 
  }
+
  cityForTimezone.addEventListener("keypress",(event)=>{
     event.key==="Enter"?timezoneAPI.click():"";
 });
