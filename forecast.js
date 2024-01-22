@@ -21,7 +21,7 @@ async function fetchForecastData(){
 
 
 
-    const response=await fetch(`http://api.weatherapi.com/v1/forecast.json?key=2f1a5f47063b4d3c96390406240201&q=${cityForForecast.value.trim()}&days=${days.value}&aqi=no&alerts=no`);
+    const response=await fetch(`https://api.weatherapi.com/v1/forecast.json?key=2f1a5f47063b4d3c96390406240201&q=${cityForForecast.value.trim()}&days=${days.value}&aqi=no&alerts=no`);
     const data=await response.json();
     console.log(data);
     if(data.hasOwnProperty("forecast")){
