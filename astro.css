@@ -1,0 +1,16 @@
+#loaderForAstro{
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+#astroDetails div p{
+    display: flex;
+    justify-content: space-between;
+}
+#errorForAstronomy{
+    display: none;
+}
+#astroDetails{
+    display: none;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,26 @@
+#additionalFuture p{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(194, 194, 194);
+     
+
+}
+
+#loaderForFuture{
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+#futureDetails{
+    display: none;
+
+}
+#errorForFuture{
+    display: none;
+
+}
+#tempForFutureHead{
+    text-wrap: nowrap;
+    font-size: 2rem;
+}

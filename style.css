@@ -98,7 +98,7 @@ html{
 #marine{
    display: none;
 }
-#astronamy{
+#astronomy{
    display: none;
 }
 #timezone{
@@ -176,10 +176,7 @@ html{
    
    cursor: pointer;
 }
-#box::-webkit-scrollbar-track{
-  
-
-}
+ 
 #box::-webkit-scrollbar-thumb{
   
    background: burlywood;
@@ -192,10 +189,7 @@ html{
    
    cursor: pointer;
 }
-#dashboard::-webkit-scrollbar-track{
  
-
-}
 #dashboard::-webkit-scrollbar-thumb{
   
    background: rgb(99, 98, 98);
@@ -253,6 +247,17 @@ html{
    text-align: center;
    
 }
+#locationHead #deg{
+   font-size: 2rem;
+}
+#locationHead span  sub{
+   font-size: 1.3rem;
+}
+#locationHead span  sup{
+   font-size: 1.3rem;
+}
+
+
  #deg sup{
     font-size: 10px;
 }
@@ -441,15 +446,18 @@ html{
    }
    #dashboard  #dashIcon span::after{
       content: " Weather";
-      font-size: 3.5rem;
+      font-size: 3rem;
    }
+   #dashIcon{
+      font-size: 2.5rem;
+      }
    
    #dashIcon i{
-      font-size: 3.5rem;
+      font-size: 3rem;
    }
    #dashboard:hover #dashIcon span::after{
       content: " Weather";
-      font-size: 3.5rem;
+      font-size: 3rem;
    }
     
    #container-box{
@@ -468,7 +476,7 @@ html{
      }
     #box{
       overflow-x: hidden;
-      padding: 2rem;
+      padding: 1.2rem;
    }
    #dashboard{
    position: absolute;
@@ -479,7 +487,7 @@ html{
    height: 100vh;
     }
    #dashboard *{
-   font-size: 2rem;
+   font-size: 1.7rem;
    }
    #dashboard:hover{
    width: 0;
@@ -490,9 +498,7 @@ html{
 
 
    }
-   #dashIcon{
-   font-size: 3rem;
-   }
+   
    #dashToggle{
    display:inline;
    position: absolute;
@@ -505,7 +511,7 @@ html{
     
    }
    #dashToggle i{
-   font-size: 3rem;
+   font-size: 2.5rem;
    
    }
    #close{
@@ -521,13 +527,13 @@ html{
    font-size: 1.2rem;
    }
    #locationHead{
-   font-size: 3rem;
+   font-size: 2.5rem;
    }
    .flex-box-childs *{
-   font-size: 2rem;
+   font-size: 1.5rem;
    }
    #deg{
-   font-size: 2rem;
+   font-size: 1.5rem;
    text-wrap:nowrap;
    }
    #deg  sup{
@@ -540,17 +546,17 @@ html{
    font-size: 1.2rem;
    }
    .myReqDetails *{
-   font-size: 2rem;
+   font-size: 1.5rem;
    } 
    #condition{
-   font-size: 2rem;
+   font-size: 1.5rem;
    font-weight: 600;
    }
    #condition i{
-   font-size: 2rem;
+   font-size: 1.5rem;
    }
    #more{
-   font-size: 1.8rem;
+   font-size: 1.5rem;
    }
  
     
