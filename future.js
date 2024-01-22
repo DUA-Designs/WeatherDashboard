@@ -9,9 +9,10 @@ const questionForFuture=document.getElementById('questionForFuture');
 
  async function fetchFutureData() {
 
+  futureDetails.classList.remove("collapseFuture");
 
  
-    futureDetails.style.display="none";
+ 
     errorForFuture.style.display="none";
 
 
@@ -40,10 +41,12 @@ const questionForFuture=document.getElementById('questionForFuture');
     return;
   }
   questionForFuture.style.display="none";
-  await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),800)));
   loaderForFuture.style.height= `${window.innerHeight-document.getElementById("searchForFuture").offsetHeight-document.getElementById("daysContainerFuture").offsetHeight}px`;
   await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),800)));
+
   loaderForFuture.style.display="grid";
+  await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),800)));
+ 
   
   
  
@@ -57,7 +60,7 @@ const questionForFuture=document.getElementById('questionForFuture');
         if(!data.hasOwnProperty("error")){
      
 
-          document.getElementById("futureHead").innerHTML =` City - ${data.location.name}, ${data.location.region} <span id="tempForFutureHead">${data.forecast.forecastday[0].day.avgtemp_c}<sup> o</sup><sub>c</sub> </span>`;
+          document.getElementById("futureHead").innerHTML =` City - ${data.location.name}, ${data.location.region} <span id="tempForPastHead">${data.forecast.forecastday[0].day.avgtemp_c}<sup> o</sup><sub>c</sub> </span>`;
           document.getElementById("dateDisplay").innerHTML =` Date: ${futureDate.value}`;
           document.getElementById("conditionFuture").innerHTML = `Condition - ${data.forecast.forecastday[0].day.condition.text}`;
           futureWeatherIcon.src = `${data.forecast.forecastday[0].day.condition.icon}`;
@@ -65,11 +68,15 @@ const questionForFuture=document.getElementById('questionForFuture');
           document.getElementById("humidityValueFuture").innerHTML = data.forecast.forecastday[0].day.avghumidity;
           document.getElementById("uvValueFuture").innerHTML = data.forecast.forecastday[0].day.uv;
           document.getElementById("windValueFuture").innerHTML =  `${data.forecast.forecastday[0].day.maxwind_kph} km/h`;
-          document.getElementById("precipitationValueFuture").innerHTML =`${data.forecast.forecastday[0].day.totalprecip_mm} mm`;
+          document.getElementById("precipitationValuePast").innerHTML =`${data.forecast.forecastday[0].day.totalprecip_mm} mm`;
 
           loaderForFuture.style.display="none";
           await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),800)));
-          futureDetails.style.display="initial";
+          
+      
+            futureDetails.classList.add("collapseFuture");
+       
+
 
  
 

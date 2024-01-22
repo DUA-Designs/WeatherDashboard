@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./marine.css">
     <link rel="stylesheet" href="./forecast.css">
     <link rel="stylesheet" href="./future.css">
+    <link rel="stylesheet" href="./past.css">
     
 </head>
 <body>
@@ -180,7 +181,7 @@
   <!-- This is forecast component-->
            <div id="forecast" class="container">
             <div class="search" id="searchForForecast">
-              <a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' class="credit" alt="Weather data by WeatherAPI.com" ></a>  <input type="text" id="cityForForecast" class="cityInput" placeholder="Enter your city..."> <button id="forecastAPI" class="weatherAPI">Check Weather</button>
+              <a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' class="credit" alt="Weather data by WeatherAPI.com" ></a>  <input type="text" id="cityForForecast" class="cityInput" placeholder="Enter your city..."> <button id="forecastAPI" class="weatherAPI">Get Forecast</button>
              </div>
              <div class="row  my-2 " id="daysContainer"><p class="p-3 border rounded">Select the number of days of forecast &nbsp; <select id="days"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></p></div>
              <div id="questionForForecast" class="container  ">
@@ -202,26 +203,88 @@
           
            </div>
            </div>
-           <div id="history"><h1>Sundaram Gajanan Tarone will join here</h1></div>
 
-     <!-- This is future component-->        
-           <div id="future" class="container">
-            <div class="search  " id="searchForFuture">
-              <a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' class="credit" alt="Weather data by WeatherAPI.com"  ></a>  <input type="text" id="cityForFuture" class="cityInput" placeholder="Enter your city..."> <button id="futureAPI" class="weatherAPI">Check Future</button>
+  <!-- This is history component-->        
+           <div id="history" class="container">
+            <div class="search  " id="searchForPast">
+              <a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' class="credit" alt="Weather data by WeatherAPI.com"  ></a>  <input type="text" id="cityForPast" class="cityInput" placeholder="Enter your city..."> <button id="pastAPI" class="weatherAPI">Check Historical</button>
               </div>
-             
-              <div class="container-fluid">
-                <div class="row  p-1 border rounded">
-                  <div class="col-12  p-3"  id="daysContainerFuture">Select the date for which you would like to see the Future. &nbsp;<input type="date"  id="futureDate" ></div> 
-                 </div>
-                <div id="questionForFuture" class="container">
+
+              <div class="row  p-1 border rounded">
+                <div class="col-12  p-3"  id="daysContainerPast">Select the date for which you would like to see the historical weather. &nbsp;<input type="date"  id="pastDate" ></div> 
+               </div>
+
+               <div id="questionForPast" class="container">
                 <div class="row p-4 ">
                   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mx-auto    ">  <img src="./images/noun-confused-4196244.png" alt="confused_image" class="img-fluid"></div>
                     <div class="col-12  "><p class="text-center">Enter the city above and click on the adjacent button to see the magic...</p></div>
                    </div>
                   </div>
-                <div id="loaderForFuture" class="  my-3"><div class="loader" ></div></div>
-                <div id="errorForFuture" class="my-3 "></div>
+
+                  <div id="loaderForPast" class="  my-3"><div class="loader"></div></div>
+
+                  <div id="errorForPast" class="my-3 "></div>
+             
+            
+               
+ 
+              
+
+               <div  class="col-12 " id="pastDetails">
+                <h1  class="col-12 p-3 shadow my-1 border rounded text-center my-2" id="pastHead"></h1>
+                
+                  <div class="row p-2 p-sm-1   ">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-1 my-2">
+                          <div class="col-12 p-lg-3 p-md-2 p-sm-2 p-xs-2 shadow rounded ">
+                            <h3 id="dateDisplayPast" class="col-12 p-3  text-center">Date</h3>
+                            <div class="col-12 p-2"><img  id="pastWeatherIcon" class="img-fluid d-block mx-auto"></div>
+                            <div id="conditionPast" class="col-12 p-2 text-center"></div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  p-1 my-2" id="additionalPast">
+                          <div class="col-12 p-3 shadow  rounded">
+                            <p><span>Average Temperature - </span> <span id="avgTempPast"></span></p>
+                            <p><span>Humidity - </span> <span id="humidityValuePast"></span></p>
+                            <p><span>Uv - </span> <span id="uvValuePast"></span></p>
+                            <p><span>Wind - </span> <span id="windValuePast"></span></p>
+                            <p><span>Precipitation - </span> <span id="precipitationValuePast"></span></p>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+              
+        
+               
+           
+                  
+              
+              </div>
+
+
+          
+
+
+            
+
+  <!-- This is future component-->        
+           <div id="future" class="container">
+            <div class="search  " id="searchForFuture">
+              <a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' class="credit" alt="Weather data by WeatherAPI.com"  ></a>  <input type="text" id="cityForFuture" class="cityInput" placeholder="Enter your city..."> <button id="futureAPI" class="weatherAPI">Check Future</button>
+              </div>
+              <div class="row  p-1 border rounded">
+                <div class="col-12  p-3"  id="daysContainerFuture">Select the date for which you would like to see the Future. &nbsp;<input type="date"  id="futureDate" ></div> 
+               </div>
+              <div id="questionForFuture" class="row">
+              <div class="col-12 p-4 ">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mx-auto    ">  <img src="./images/noun-confused-4196244.png" alt="confused_image" class="img-fluid"></div>
+                  <div class="col-12  "><p class="text-center">Enter the city above and click on the adjacent button to see the magic...</p></div>
+                 </div>
+                </div>
+              <div id="loaderForFuture" class="  my-3"><div class="loader" ></div></div>
+              <div id="errorForFuture" class="my-3 "></div>
+             
+              
+                
 
                <div  class="row " id="futureDetails">
                 <h1  class="col-12 p-3 shadow my-1 border rounded text-center my-2" id="futureHead"></h1>
@@ -236,11 +299,11 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  p-1 my-2" id="additionalFuture">
                           <div class="col-12 p-3 shadow  rounded">
-                            <p><span>Average Temperature - &nbsp;</span> <span id="avgTempFuture"></span></p>
-                            <p><span>Humidity - &nbsp;</span> <span id="humidityValueFuture"></span></p>
-                            <p><span>Uv - &nbsp;</span> <span id="uvValueFuture"></span></p>
-                            <p><span>Wind - &nbsp;</span> <span id="windValueFuture"></span></p>
-                            <p><span>Precipitation - &nbsp;</span> <span id="precipitationValueFuture"></span></p>
+                            <p><span>Average Temperature - </span> <span id="avgTempFuture"></span></p>
+                            <p><span>Humidity - </span> <span id="humidityValueFuture"></span></p>
+                            <p><span>Uv - </span> <span id="uvValueFuture"></span></p>
+                            <p><span>Wind - </span> <span id="windValueFuture"></span></p>
+                            <p><span>Precipitation - </span> <span id="precipitationValueFuture"></span></p>
                           </div>
                         </div>
                   </div>
@@ -251,7 +314,7 @@
            
                   
               
-              </div>
+             
 
 
               </div>
@@ -392,15 +455,17 @@
       
 
     </div>
+    </div>
     
     
     <script src="./script.js"></script>
-    <script src="./timezone.js" ></script>
-    <script src="./sports.js"></script>
+    <script src="./forecast.js"></script>
+    <script src="./past.js"></script>
+    <script src="./future.js"></script>
     <script src="./marine.js"></script>
     <script src="./astro.js"></script>
-    <script src="./forecast.js"></script>
-    <script src="./future.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="./timezone.js" ></script>
+    <script src="./sports.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

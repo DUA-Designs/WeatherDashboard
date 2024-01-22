@@ -1,4 +1,4 @@
-#additionalFuture p{
+#additionalPast p{
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid rgb(194, 194, 194);
@@ -6,7 +6,7 @@
 
 }
 
-#loaderForFuture{
+#loaderForPast{
     display: none;
     justify-content: center;
     align-items: center;
@@ -14,21 +14,21 @@
 
 }
 
-#futureDetails{
+#pastDetails{
     
     transform-origin: top;
     transform: scaleY(0);
 
 }
-#futureDetails.collapseFuture{
+#pastDetails.collapsePast{
     transform: scaleY(1);
 
 }
-#errorForFuture{
+#errorForPast{
     display: none;
 
 }
-#tempForFutureHead{
+#tempForPastHead{
     text-wrap: nowrap;
     font-size: 2rem;
 }

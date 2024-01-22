@@ -28,7 +28,7 @@ async function fetchForecastData(){
         let size=data.forecast.forecastday.length;
         let header=document.createElement("div");
         header.classList.add(...["col-12" ,"my-3","p-2"]);
-        header.innerHTML=`<h2 class="p-4 shadow text-center">City - ${data.location.name}, ${data.location.region}</h2>`;
+        header.innerHTML=`<h2 class="p-4 shadow text-center rounded">City - ${data.location.name}, ${data.location.region}</h2>`;
         forecastDetails.appendChild(header);
         let classes=[];
                if(size===1){
@@ -65,7 +65,7 @@ async function fetchForecastData(){
             <p class="col-12 p-2 border-bottom my-2"> <span>Wind Speed </span><span id="maxWind">${data.forecast.forecastday[i].day.maxwind_kph} kmph</span></p>
             <p class="col-12 p-2 border-bottom my-2"> <span>Uv </span><span id="uv"> ${data.forecast.forecastday[i].day.uv}</span></p>
             <p class="col-12 p-2 border-bottom my-2"> <span>Snow </span><span id="totSnow"> ${data.forecast.forecastday[i].day.totalsnow_cm} cm</span></p>
-            <p class="col-12 p-2 border-bottom my-2"> <span>avgvis_km </span><span id="avgVis"> ${data.forecast.forecastday[i].day.avgvis_km} km</span></p>
+            <p class="col-12 p-2 border-bottom my-2"> <span>Avg Vis </span><span id="avgVis"> ${data.forecast.forecastday[i].day.avgvis_km} km</span></p>
             <p class="col-12 p-2 border-bottom my-2"> <span>Humidity </span><span id="avgHum">${data.forecast.forecastday[i].day.avghumidity} </span></p>
             <p class="col-12 p-2 border-bottom my-2"> <span>Precipitation </span><span id="totPrecip">${data.forecast.forecastday[i].day.totalprecip_mm} mm</span></p>
 
