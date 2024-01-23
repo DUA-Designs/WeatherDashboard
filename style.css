@@ -43,7 +43,7 @@ html{
 }
  
  
-/* HTML: <div class="loader"></div> */
+/*  A loader for displaying components */
 .componentLoader {
    width: 50px;
    aspect-ratio: 1;
@@ -74,8 +74,9 @@ html{
  @keyframes l16 { 
    100%{transform: rotate(1turn)}
  }
+ /* A loader for displaying components */
  
- 
+  /* Hiding all components other than welcome  */
 #welcome{
    text-align: center;
 }
@@ -107,14 +108,13 @@ html{
 #sports{
    display: none;
 }
+
+
+/*Css for dashboard  */
 #dashIcon {
    overflow: hidden;
-    
    text-align: center;
  
-    
-   
-    
 }
 
 #dashIcon i{
@@ -162,7 +162,29 @@ html{
    content: "  Sports";
 }
 
+#dashboard::-webkit-scrollbar{
+   width: 8px;
+   background : transparent;
+   
+   cursor: pointer;
+}
  
+#dashboard::-webkit-scrollbar-thumb{
+  
+   background: rgb(99, 98, 98);
+   border-radius: 10px;
+}
+
+#dashToggle{
+   display: none;
+}
+#close{
+   display: none;
+}
+/* Dashboard ends here */
+
+/* CSS for box having all components */
+
 #box{
    overflow-y: scroll;
    flex: auto;
@@ -183,22 +205,10 @@ html{
    border-radius: 10px;
 
 }
-#dashboard::-webkit-scrollbar{
-   width: 8px;
-   background : transparent;
-   
-   cursor: pointer;
-}
- 
-#dashboard::-webkit-scrollbar-thumb{
-  
-   background: rgb(99, 98, 98);
-   border-radius: 10px;
-}
-#errorForCurrent{
-   display: none;
-}
+/* box ends here */
 
+
+/*common css for credit,search input, button and loader */
 .search{
     padding: 1vw;
     text-align: center;
@@ -228,40 +238,8 @@ html{
 .weatherAPI:hover{
    background-color: burlywood;
 }
-#questionForCurrent{
-  
-   display: grid;
-   align-items: center;
-   height:unset;
- 
- 
-   
-}
 
- #deg sub{
-    font-weight: 100;
-    font-size: 10px;
-}
- #locationHead{
-   font-size: 2rem;
-   text-align: center;
-   
-}
-#locationHead #deg{
-   font-size: 2rem;
-}
-#locationHead span  sub{
-   font-size: 1.3rem;
-}
-#locationHead span  sup{
-   font-size: 1.3rem;
-}
-
-
- #deg sup{
-    font-size: 10px;
-}
- /* HTML: <div class="loader"></div> */
+ /* Inside loader for every component*/
  #loader{
    display: none;
    position: relative;
@@ -293,7 +271,45 @@ html{
  @keyframes l15{ 
    100%{transform: rotate(1turn)}
 }
- /* HTML: <div class="loader"></div> */
+ /* Inside loader ends here */
+
+
+/*Css for current component */
+
+#errorForCurrent{
+   display: none;
+}
+#questionForCurrent{
+  
+   display: grid;
+   align-items: center;
+   height:unset;
+}
+
+ #deg sub{
+    font-weight: 100;
+    font-size: 10px;
+}
+#locationHead{
+   font-size: 2rem;
+   text-align: center;
+   
+}
+#locationHead #deg{
+   font-size: 2rem;
+}
+#locationHead span  sub{
+   font-size: 1.3rem;
+}
+#locationHead span  sup{
+   font-size: 1.3rem;
+}
+
+
+ #deg sup{
+    font-size: 10px;
+}
+
 
 #flex-box{
     transform-origin: top;
@@ -337,9 +353,6 @@ html{
     border-radius: 5px;
     border: none;
     padding: 0.5rem;
-  
-    
-
 }
 #more:hover{
    background-color: burlywood;
@@ -369,12 +382,7 @@ html{
    padding: 1rem;
    border-bottom: 1px solid black;
 }
-#dashToggle{
-   display: none;
-}
-#close{
-   display: none;
-}
+
 
 #container-box{
  display: flex;
@@ -391,9 +399,10 @@ html{
    width: auto;
 }
 
+/*media queries for responsive interface and content */
 @media  screen and (max-width:760px) 
 {
-
+     /*common css */
     .search{
       font-size: 1.2rem;
    
@@ -414,6 +423,7 @@ html{
       width: 100%;
        
     }
+   /*Dashboard */
     #dashboard:hover #dashItems{
       text-align: center;
    }
@@ -459,6 +469,54 @@ html{
       content: " Weather";
       font-size: 3rem;
    }
+   #dashboard{
+      position: absolute;
+      overflow-y: scroll;
+      z-index: 99;
+      padding: 0;
+      width: 0;
+      height: 100vh;
+       }
+      #dashboard *{
+      font-size: 1.7rem;
+      }
+      #dashboard:hover{
+      width: 0;
+       }
+    
+      #dashboard.expandMe{
+      width: 100%;
+   
+   
+      }
+      
+      #dashToggle{
+      display:inline;
+      position: absolute;
+      cursor: pointer;
+      z-index: 99;
+      padding: 1rem;
+      border-radius: 5px;
+      background-color: burlywood;
+     
+       
+      }
+      #dashToggle i{
+      font-size: 2.5rem;
+      
+      }
+      #close{
+      font-size: 3.8rem;
+      }
+      #close.expandMe{
+      display: block;
+      cursor: pointer;
+      margin: 1rem;
+   
+      }
+       
+     
+   /* current component*/
     
    #container-box{
     flex-wrap: wrap;
@@ -478,51 +536,7 @@ html{
       overflow-x: hidden;
       padding: 1.2rem;
    }
-   #dashboard{
-   position: absolute;
-   overflow-y: scroll;
-   z-index: 99;
-   padding: 0;
-   width: 0;
-   height: 100vh;
-    }
-   #dashboard *{
-   font-size: 1.7rem;
-   }
-   #dashboard:hover{
-   width: 0;
-    }
- 
-   #dashboard.expandMe{
-   width: 100%;
-
-
-   }
    
-   #dashToggle{
-   display:inline;
-   position: absolute;
-   cursor: pointer;
-   z-index: 99;
-   padding: 1rem;
-   border-radius: 5px;
-   background-color: burlywood;
-  
-    
-   }
-   #dashToggle i{
-   font-size: 2.5rem;
-   
-   }
-   #close{
-   font-size: 3.8rem;
-   }
-   #close.expandMe{
-   display: block;
-   cursor: pointer;
-   margin: 1rem;
-
-   }
    #air *{
    font-size: 1.2rem;
    }

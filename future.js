@@ -68,7 +68,7 @@ const questionForFuture=document.getElementById('questionForFuture');
           document.getElementById("humidityValueFuture").innerHTML = data.forecast.forecastday[0].day.avghumidity;
           document.getElementById("uvValueFuture").innerHTML = data.forecast.forecastday[0].day.uv;
           document.getElementById("windValueFuture").innerHTML =  `${data.forecast.forecastday[0].day.maxwind_kph} km/h`;
-          document.getElementById("precipitationValuePast").innerHTML =`${data.forecast.forecastday[0].day.totalprecip_mm} mm`;
+          document.getElementById("precipitationValueFuture").innerHTML =`${data.forecast.forecastday[0].day.totalprecip_mm} mm`;
 
           loaderForFuture.style.display="none";
           await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),800)));
