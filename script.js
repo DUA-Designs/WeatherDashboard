@@ -155,7 +155,7 @@ async function fetchCurrentData(){
         let ind=data.current.air_quality["us-epa-index"];
          
        usEpa.innerHTML=data.current.air_quality["us-epa-index"];
-       condition.innerHTML=`As per the "US - EPA standard" the condition seems to be "${conditionArray[ind>=6?5:ind]}" ${smiley[ind>=6?5:ind]}`;
+       condition.innerHTML=`As per the "US - EPA standard" the condition seems to be "${conditionArray[ind>=6?5:ind-1]}" ${smiley[ind>=6?5:ind-1]}`;
 
 
        
