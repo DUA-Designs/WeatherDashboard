@@ -20,3 +20,6 @@
     display: none;
     flex-wrap: wrap;
 }
+#marineDetails div p span:nth-child(2){
+    text-wrap: nowrap;
+}
