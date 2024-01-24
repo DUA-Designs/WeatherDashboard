@@ -1,0 +1,22 @@
+#loaderForMarine{
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+#searchForMarine a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+#marineDetails div p{
+    display: flex;
+    justify-content: space-between;
+}
+#errorForMarine{
+    display: none;
+}
+#marineDetails{
+    display: none;
+    flex-wrap: wrap;
+}

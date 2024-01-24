@@ -1,0 +1,19 @@
+ 
+#sportsDetails h4 span{
+    font-size: 2rem;
+}
+#sportsDetails h3{
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 1rem;
+}
+
+#loaderForSports{
+    display: none;
+ justify-content: center;
+ align-items: center;
+ 
+}
+#noSports{
+    display: none;
+}

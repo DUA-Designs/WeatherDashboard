@@ -1,0 +1,72 @@
+#loaderForTimezone{
+    display: none;
+    position: relative;
+  
+ 
+ 
+   
+     align-items: center;
+     justify-content: center;
+     
+    
+  }
+  #timeDetails{
+    display: none;
+ 
+   
+    flex-wrap: wrap;
+   
+  }
+#timeDetails div div{
+   
+ 
+ 
+ 
+ margin : 0.5rem 0; 
+  
+ padding:1rem;
+ border-radius: 5px;
+ 
+ 
+}
+#timeDetails div div span:nth-child(2){
+  text-wrap: nowrap;
+}
+
+#timeHead span:nth-child(1){
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+#timeHead span:nth-child(2){
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+#loaderForTimezone{
+  display: none;
+}
+#errorForTimezone{
+  display: none;
+}
+@media screen and  (max-width:760px){
+
+  
+  #timeHead span:nth-child(1){
+    font-size: 2rem ;
+   
+}
+#timeHead span:nth-child(2){
+  font-size: 1.5rem  ;
+  
+
+}
+#timeDetails div div span{
+  font-size: 1.2rem;
+}
+ 
+#timeDetails div div{
+ padding:1.2rem; 
+}
+
+
+}
