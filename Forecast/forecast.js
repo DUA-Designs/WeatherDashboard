@@ -23,8 +23,9 @@ async function fetchForecastData() {
     loaderForForecast.style.height = `${window.innerHeight - document.getElementById("searchForForecast").offsetHeight - document.getElementById("daysContainer").offsetHeight}px`;
 
     // API request to fetch forecast data
-    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=2f1a5f47063b4d3c96390406240201&q=${cityForForecast.value.trim()}&days=${days.value}&aqi=no&alerts=no`);
+    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=26fc930a943946f6abb72609242501&q=${cityForForecast.value.trim()}&days=${days.value}&aqi=no&alerts=no`);
     const data = await response.json();
+    console.log(data);
 
     // Check if the API response contains forecast data
     if (data.hasOwnProperty("forecast")) {
