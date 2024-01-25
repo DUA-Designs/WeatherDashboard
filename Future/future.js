@@ -52,7 +52,7 @@ async function fetchFutureData() {
   await new Promise(resolve => setTimeout(() => setTimeout(() => resolve("This is for loading Time"), 800)));
 
   // Continue with the API request
-  const response = await fetch(`https://api.weatherapi.com/v1/future.json?key=7353f0a0bd6145ac85931954241801&q=${cityForFuture.value.trim()}&dt=${futureDate.value}`);
+  const response = await fetch(`https://api.weatherapi.com/v1/future.json?key=26fc930a943946f6abb72609242501&q=${cityForFuture.value.trim()}&dt=${futureDate.value}`);
   const data = await response.json();
 
   // Check if there is no error in the API response
