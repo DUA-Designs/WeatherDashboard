@@ -152,7 +152,7 @@ html{
    content: " Marine";
 }
 #dashboard:hover #dashItems div:nth-child(6)  span::after{
-   content: " Astronamy";
+   content: " Astronomy";
 }
 
 #dashboard:hover #dashItems div:nth-child(7)  span::after{
@@ -445,7 +445,7 @@ html{
       content: " Marine";
    }
    #dashboard #dashItems div:nth-child(6)  span::after{
-      content: " Astronamy";
+      content: " Astronomy";
    }
    
    #dashboard #dashItems div:nth-child(7)  span::after{
