@@ -27,7 +27,13 @@ const components=[ "welcome","current","forecast","history","future","marine","a
     await new Promise(resolve=>setTimeout(()=>setTimeout(()=>resolve("This is for loading Time"),500)));
   
     //display selected component
-    document.getElementById(state).style.display="block";
+    document.getElementById(state).style.display="block";,
+    //clearing all other components in case the render function is triggered in short amount of time than it's running time.
+    for(let i in components){
+      if(components[i]!==state){
+        document.getElementById(components[i]).style.display="none";
+      }
+       }
 
      
 
